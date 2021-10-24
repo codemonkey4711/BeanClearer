@@ -73,13 +73,16 @@ public class Test {
         B b = new B();
 
         List<B> bs = new ArrayList<>();
-
         {
             bs.add(new B());
             bs.add(new B());
             bs.add(new B());
         }
 
+        Map<B, B> m = new HashMap<>();
+        {
+            m.put(new B(), new B());
+        }
     }
 
     @Value
