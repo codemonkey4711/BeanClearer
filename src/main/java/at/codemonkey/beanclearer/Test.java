@@ -17,7 +17,7 @@ public class Test {
     public static void main(String[] args) {
         A a = new A();
         System.out.println(JsonMapper.toJson(a));
-        clearEmptyBeans(a, new HashSet<>());
+        clearEmptyBeans(a, Collections.newSetFromMap(new IdentityHashMap<>()));
         System.out.println(JsonMapper.toJson(a));
     }
 
@@ -75,6 +75,8 @@ public class Test {
         List<B> bs = new ArrayList<>();
 
         {
+            bs.add(new B());
+            bs.add(new B());
             bs.add(new B());
         }
 
